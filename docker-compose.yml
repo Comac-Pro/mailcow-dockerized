@@ -263,7 +263,7 @@ services:
     volumes:
       - ./data/hooks/dovecot:/hooks:Z
       - ./data/conf/dovecot:/etc/dovecot:z
-      - /etc/letsencrypt/archive/mail.comacpro.com.vn/:/etc/ssl/mail/:ro,z
+      - /opt/data/mailcow-certs/:/etc/ssl/mail/:ro,z
       - ./data/conf/sogo/:/etc/sogo/:z
       - ./data/conf/phpfpm/sogo-sso/:/etc/phpfpm/:z
       - ${VOLUMES_PREFIX_PATH:-/opt/data/volumes/mailcow}/vmail:/var/vmail
