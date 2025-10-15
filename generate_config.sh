@@ -448,7 +448,7 @@ chmod 600 mailcow.conf
 # copy but don't overwrite existing certificate
 echo "Generating snake-oil certificate..."
 # Making Willich more popular
-openssl req -x509 -newkey rsa:4096 -keyout data/assets/ssl-example/key.pem -out data/assets/ssl-example/cert.pem -days 365 -subj "/C=DE/ST=NRW/L=Willich/O=mailcow/OU=mailcow/CN=${MAILCOW_HOSTNAME}" -sha256 -nodes
+openssl req -x509 -newkey rsa:4096 -keyout data/assets/ssl-example/key.pem -out data/assets/ssl-example/cert.pem -days 365 -subj "/C=VN/ST=HaNoi/L=HaNoi/O=CoMacPro/OU=IT/CN=${MAILCOW_HOSTNAME}" -sha256 -nodes
 echo "Copying snake-oil certificate..."
 cp -n -d data/assets/ssl-example/*.pem data/assets/ssl/
 
@@ -493,9 +493,9 @@ if [ $? -eq 0 ]; then
   echo '<?php' > data/web/inc/app_info.inc.php
   echo '  $MAILCOW_GIT_VERSION="'$mailcow_git_version'";' >> data/web/inc/app_info.inc.php
   echo '  $MAILCOW_LAST_GIT_VERSION="";' >> data/web/inc/app_info.inc.php
-  echo '  $MAILCOW_GIT_OWNER="mailcow";' >> data/web/inc/app_info.inc.php
+  echo '  $MAILCOW_GIT_OWNER="Comac-Pro";' >> data/web/inc/app_info.inc.php
   echo '  $MAILCOW_GIT_REPO="mailcow-dockerized";' >> data/web/inc/app_info.inc.php
-  echo '  $MAILCOW_GIT_URL="https://github.com/mailcow/mailcow-dockerized";' >> data/web/inc/app_info.inc.php
+  echo '  $MAILCOW_GIT_URL="https://github.com/Comac-Pro/mailcow-dockerized";' >> data/web/inc/app_info.inc.php
   echo '  $MAILCOW_GIT_COMMIT="'$mailcow_git_commit'";' >> data/web/inc/app_info.inc.php
   echo '  $MAILCOW_GIT_COMMIT_DATE="'$mailcow_git_commit_date'";' >> data/web/inc/app_info.inc.php
   echo '  $MAILCOW_BRANCH="'$git_branch'";' >> data/web/inc/app_info.inc.php
@@ -505,9 +505,9 @@ else
   echo '<?php' > data/web/inc/app_info.inc.php
   echo '  $MAILCOW_GIT_VERSION="'$mailcow_git_version'";' >> data/web/inc/app_info.inc.php
   echo '  $MAILCOW_LAST_GIT_VERSION="";' >> data/web/inc/app_info.inc.php
-  echo '  $MAILCOW_GIT_OWNER="mailcow";' >> data/web/inc/app_info.inc.php
+  echo '  $MAILCOW_GIT_OWNER="Comac-Pro";' >> data/web/inc/app_info.inc.php
   echo '  $MAILCOW_GIT_REPO="mailcow-dockerized";' >> data/web/inc/app_info.inc.php
-  echo '  $MAILCOW_GIT_URL="https://github.com/mailcow/mailcow-dockerized";' >> data/web/inc/app_info.inc.php
+  echo '  $MAILCOW_GIT_URL="https://github.com/Comac-Pro/mailcow-dockerized";' >> data/web/inc/app_info.inc.php
   echo '  $MAILCOW_GIT_COMMIT="";' >> data/web/inc/app_info.inc.php
   echo '  $MAILCOW_GIT_COMMIT_DATE="";' >> data/web/inc/app_info.inc.php
   echo '  $MAILCOW_BRANCH="'$git_branch'";' >> data/web/inc/app_info.inc.php
