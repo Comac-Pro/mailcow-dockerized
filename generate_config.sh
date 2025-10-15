@@ -213,7 +213,7 @@ HTTPS_PORT=443
 HTTPS_BIND=
 
 # Redirect HTTP connections to HTTPS - y/n
-HTTP_REDIRECT=y
+HTTP_REDIRECT=n
 
 # ------------------------------
 # Other bindings
