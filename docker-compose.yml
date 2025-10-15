@@ -536,7 +536,7 @@ services:
       - postfix-mailcow
       - dovecot-mailcow
       - mysql-mailcow
-      - acme-mailcow
+#      - acme-mailcow
       - redis-mailcow
     environment:
       - IPV6_NETWORK=${IPV6_NETWORK:-fd4d:6169:6c63:6f77::/64}
