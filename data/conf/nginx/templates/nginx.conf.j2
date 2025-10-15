@@ -208,8 +208,8 @@ http {
 
         http2 on;
 
-        ssl_certificate {{ cert.cert_path }}cert.pem;
-        ssl_certificate_key {{ cert.cert_path }}key.pem;
+        ssl_certificate {{ cert.cert_path }}fullchain.pem;
+        ssl_certificate_key {{ cert.cert_path }}privkey.pem;
 
         server_name {{ cert.domains }};
 

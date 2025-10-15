@@ -449,8 +449,7 @@ services:
       - ./data/web/inc/functions.auth.inc.php:/mailcowauth/functions.auth.inc.php:z
       - ./data/web/inc/sessions.inc.php:/mailcowauth/sessions.inc.php:z
       - ${VOLUMES_PREFIX_PATH:-/opt/data/volumes/mailcow}/sogo-web:/usr/lib/GNUstep/SOGo/
-      - /etc/letsencrypt/live/mail.comacpro.com.vn/fullchain.pem:/etc/ssl/mail/mail.comacpro.com.vn.crt:ro,z
-      - /etc/letsencrypt/live/mail.comacpro.com.vn/privkey.pem:/etc/ssl/mail/mail.comacpro.com.vn.key:ro,z
+      - /etc/letsencrypt/live/mail.comacpro.com.vn/:/etc/ssl/mail/:ro,z
     ports:
       - "${HTTPS_BIND:-}:8445:${HTTPS_PORT:-443}"
       - "${HTTP_BIND:-}:81:${HTTP_PORT:-80}"
