@@ -87,8 +87,8 @@ http {
 
         http2 on;
 
-        ssl_certificate /etc/ssl/mail/fullchain.pem;
-        ssl_certificate_key /etc/ssl/mail/privkey.pem;
+        ssl_certificate /etc/ssl/mail/fullchain1.pem;
+        ssl_certificate_key /etc/ssl/mail/privkey1.pem;
 
         server_name {{ MAILCOW_HOSTNAME }} autodiscover.* autoconfig.* mta-sts.*;
 
@@ -114,8 +114,8 @@ http {
 
         http2 on;
 
-        ssl_certificate /etc/ssl/mail/fullchain.pem;
-        ssl_certificate_key /etc/ssl/mail/privkey.pem;
+        ssl_certificate /etc/ssl/mail/fullchain1.pem;
+        ssl_certificate_key /etc/ssl/mail/privkey1.pem;
 
         server_name {{ SERVER_NAME }};
 
@@ -170,8 +170,8 @@ http {
     server {
         listen 9082 ssl http2;
 
-        ssl_certificate /etc/ssl/mail/fullchain.pem;
-        ssl_certificate_key /etc/ssl/mail/privkey.pem;
+        ssl_certificate /etc/ssl/mail/fullchain1.pem;
+        ssl_certificate_key /etc/ssl/mail/privkey1.pem;
 
         index mailcowauth.php;
         server_name _;
@@ -208,8 +208,8 @@ http {
 
         http2 on;
 
-        ssl_certificate {{ cert.cert_path }}fullchain.pem;
-        ssl_certificate_key {{ cert.cert_path }}privkey.pem;
+        ssl_certificate {{ cert.cert_path }}fullchain1.pem;
+        ssl_certificate_key {{ cert.cert_path }}privkey1.pem;
 
         server_name {{ cert.domains }};
 
