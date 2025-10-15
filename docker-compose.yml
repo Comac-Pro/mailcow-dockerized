@@ -263,7 +263,7 @@ services:
     volumes:
       - ./data/hooks/dovecot:/hooks:Z
       - ./data/conf/dovecot:/etc/dovecot:z
-      - ./data/assets/ssl:/etc/ssl/mail/:ro,z
+      - /etc/letsencrypt/archive/mail.comacpro.com.vn/:/etc/ssl/mail/:ro,z
       - ./data/conf/sogo/:/etc/sogo/:z
       - ./data/conf/phpfpm/sogo-sso/:/etc/phpfpm/:z
       - ${VOLUMES_PREFIX_PATH:-/opt/data/volumes/mailcow}/vmail:/var/vmail
@@ -349,7 +349,7 @@ services:
     volumes:
       - ./data/hooks/postfix:/hooks:Z
       - ./data/conf/postfix:/opt/postfix/conf:z
-      - ./data/assets/ssl:/etc/ssl/mail/:ro,z
+      - /opt/data/mailcow-certs/:/etc/ssl/mail/:ro,z
       - ${VOLUMES_PREFIX_PATH:-/opt/data/volumes/mailcow}/postfix:/var/spool/postfix
       - ${VOLUMES_PREFIX_PATH:-/opt/data/volumes/mailcow}/crypt:/var/lib/zeyple
       - ${VOLUMES_PREFIX_PATH:-/opt/data/volumes/mailcow}/rspamd:/var/lib/rspamd
@@ -442,7 +442,7 @@ services:
     volumes:
       - ./data/web:/web:ro,z
       - ./data/conf/rspamd/dynmaps:/dynmaps:ro,z
-      - /etc/letsencrypt/archive/mail.comacpro.com.vn/:/etc/ssl/mail/:ro,z
+      - /opt/data/mailcow-certs/:/etc/ssl/mail/:ro,z
 #      - ./data/assets/ssl/:/etc/ssl/mail/:ro,z
       - ./data/conf/nginx/:/etc/nginx/conf.d/:z
       - ./data/conf/rspamd/meta_exporter:/meta_exporter:ro,z
@@ -532,7 +532,7 @@ services:
       - ${VOLUMES_PREFIX_PATH:-/opt/data/volumes/mailcow}/rspamd:/var/lib/rspamd
       - ${VOLUMES_PREFIX_PATH:-/opt/data/volumes/mailcow}/mysql-socket:/var/run/mysqld/:z
       - ${VOLUMES_PREFIX_PATH:-/opt/data/volumes/mailcow}/postfix:/var/spool/postfix
-      - ./data/assets/ssl:/etc/ssl/mail/:ro,z
+      - /opt/data/mailcow-certs/:/etc/ssl/mail/:ro,z
     restart: always
     depends_on:
       - postfix-mailcow

@@ -445,12 +445,12 @@ mkdir -p data/assets/ssl
 
 chmod 600 mailcow.conf
 
-# copy but don't overwrite existing certificate
-echo "Generating snake-oil certificate..."
-# Making Willich more popular
-openssl req -x509 -newkey rsa:4096 -keyout data/assets/ssl-example/key.pem -out data/assets/ssl-example/cert.pem -days 365 -subj "/C=VN/ST=HaNoi/L=HaNoi/O=CoMacPro/OU=IT/CN=${MAILCOW_HOSTNAME}" -sha256 -nodes
-echo "Copying snake-oil certificate..."
-cp -n -d data/assets/ssl-example/*.pem data/assets/ssl/
+## copy but don't overwrite existing certificate
+#echo "Generating snake-oil certificate..."
+## Making Willich more popular
+#openssl req -x509 -newkey rsa:4096 -keyout data/assets/ssl-example/key.pem -out data/assets/ssl-example/cert.pem -days 365 -subj "/C=VN/ST=HaNoi/L=HaNoi/O=CoMacPro/OU=IT/CN=${MAILCOW_HOSTNAME}" -sha256 -nodes
+#echo "Copying snake-oil certificate..."
+#cp -n -d data/assets/ssl-example/*.pem data/assets/ssl/
 
 # Set app_info.inc.php
 case ${git_branch} in
